@@ -187,7 +187,7 @@ function kstats_create_tables() {
 	// columns on pre 5.0.3 - varchar's should be as small as humanly possible, while still being able
 	// to accept the possibility of extra long strings...
 
-	$mysql5 = ( version_compare( mysql_get_server_info(), '5.0.3', '>' ) ? TRUE : FALSE );
+	$mysql5 = ( version_compare( mysqli_get_server_info(), '5.0.3', '>' ) ? TRUE : FALSE );
 
 	$tables['raw'] = "CREATE TABLE IF NOT EXISTS `" . KSTATS_TABLE_RAW . "` (
 						  `id` SERIAL,
